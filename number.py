@@ -93,10 +93,8 @@ class Number:
         med = len(dig) // 2
 
         for i in range(0,med):
-            #print(i)
             if dig[i] == dig[-(i+1)]:
                 count +=1
-                print(dig[-(i+1)])
         
         if count == med:
             return True
@@ -169,5 +167,5 @@ class Number:
     
 
 # Create a new instance of Number
-number = Number(12354321)
+number = Number(1234321)
 print(number.is_palindrome())
