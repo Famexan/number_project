@@ -82,7 +82,27 @@ class Number:
 
     def is_palindrome(self):
         """ Returns True if the number is a palindrome, otherwise False. returns: bool """
-        pass
+        number = self.value
+        dig = []
+        while number:
+            s1 = number % 10
+            dig.append(s1)
+            number //= 10
+
+        count = 0
+        med = len(dig) // 2
+
+        for i in range(0,med):
+            #print(i)
+            if dig[i] == dig[-(i+1)]:
+                count +=1
+                print(dig[-(i+1)])
+        
+        if count == med:
+            return True
+        else:
+            return False
+
 
     def get_digits(self):
         """ Returns a list of all the digits in the number. returns: list """
@@ -149,5 +169,5 @@ class Number:
     
 
 # Create a new instance of Number
-number = Number(1234)
-print(number.get_average())
+number = Number(12354321)
+print(number.is_palindrome())
